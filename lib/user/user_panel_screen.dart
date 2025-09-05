@@ -99,129 +99,129 @@ class _UserPanelScreenState extends State<UserPanelScreen> {
             const SizedBox(height: 5),
             Divider(color: Colors.green),
             const SizedBox(height: 5),
-            Text(
-              "Subscription :",
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.normal, color: Colors.blue),
-            ),
-            Text("Semi-Annual Subscription", style: TextStyle(color: Colors.grey),),
-            const SizedBox(height: 10),
-            // Placeholder for Graphs/Analytics
-            Container(
-              padding: EdgeInsets.all(12),
-              height: 150,
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(15),
-                border: Border.all(color: Colors.blue.shade300),
-                boxShadow: [
-                  BoxShadow(color: Colors.green.shade100, blurRadius: 5, spreadRadius: 2)
-                ],
-              ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  // Plan Price (Top Section)
-                  Text(
-                    "₹ ${semiAnnualPrice ?? 'N/a'}",
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.blue),
-                  ),
-                  SizedBox(height: 5),
 
-                  // Data & Validity (Middle Section)
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text("Validity | 180 Days",
-                          style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500)),
-                      Text("Unlock Access to: Posting | Renting | Buying",
-                          style: TextStyle(fontSize: 14, color: Colors.black)),
-                    ],
-                  ),
-                  Divider(color: Colors.blueGrey,),
-                  Spacer(),
-
-                  // Bottom Section (Horizontal Icons/Benefits)
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Icon(Icons.edit_note_outlined, color: Colors.blue.shade700, size: 22),
-                      Icon(Icons.home_work_outlined, color: Colors.amber.shade700, size: 22),
-                      Icon(Icons.real_estate_agent, color: Colors.teal.shade700, size: 22),
-                      InkWell(
-                        onTap: (){
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(builder: (context) => SubscriptionPage()),
-                          );
-                        },
-                        child: Text("Activate Subscription >", style: TextStyle(color: Colors.blue, fontSize: 16)),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            ),
-            const SizedBox(height: 15),
-            Text("Annual Subscription", style: TextStyle(color: Colors.grey),),
-            const SizedBox(height: 10),
-            // Placeholder for Graphs/Analytics
-            Container(
-              padding: EdgeInsets.all(12),
-              height: 150,
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(15),
-                border: Border.all(color: Colors.blue.shade300),
-                boxShadow: [
-                  BoxShadow(color: Colors.green.shade100, blurRadius: 5, spreadRadius: 2)
-                ],
-              ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  // Plan Price (Top Section)
-                  Text(
-                    "₹ ${annualPrice ?? 'N/a'}",
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.blue),
-                  ),
-                  SizedBox(height: 5),
-
-                  // Data & Validity (Middle Section)
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text("Validity | 365 Days",
-                          style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500)),
-                      Text("Unlock Access to: Posting | Renting | Buying",
-                          style: TextStyle(fontSize: 14, color: Colors.black)),
-                    ],
-                  ),
-                  Divider(color: Colors.blueGrey,),
-                  Spacer(),
-
-                  // Bottom Section (Horizontal Icons/Benefits)
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Icon(Icons.edit_note_outlined, color: Colors.blue.shade700, size: 22),
-                      Icon(Icons.home_work_outlined, color: Colors.amber.shade700, size: 22),
-                      Icon(Icons.real_estate_agent, color: Colors.teal.shade700, size: 22),
-                      InkWell(
-                        onTap: (){
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (context) => SubscriptionPage()),
-                          );
-                        },
-                        child: Text("Activate Subscription >", style: TextStyle(color: Colors.blue, fontSize: 16)),
-                      ),
-
-                    ],
-                  ),
-                ],
-              ),
-            ),
-
+            // Text(
+            //   "Subscription :",
+            //   style: TextStyle(fontSize: 20, fontWeight: FontWeight.normal, color: Colors.blue),
+            // ),
+            // Text("Semi-Annual Subscription", style: TextStyle(color: Colors.grey),),
+            // const SizedBox(height: 10),
+            // // Placeholder for Graphs/Analytics
+            // Container(
+            //   padding: EdgeInsets.all(12),
+            //   height: 150,
+            //   decoration: BoxDecoration(
+            //     color: Colors.white,
+            //     borderRadius: BorderRadius.circular(15),
+            //     border: Border.all(color: Colors.blue.shade300),
+            //     boxShadow: [
+            //       BoxShadow(color: Colors.green.shade100, blurRadius: 5, spreadRadius: 2)
+            //     ],
+            //   ),
+            //   child: Column(
+            //     crossAxisAlignment: CrossAxisAlignment.start,
+            //     children: [
+            //       // Plan Price (Top Section)
+            //       Text(
+            //         "₹ ${semiAnnualPrice ?? 'N/a'}",
+            //         style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.blue),
+            //       ),
+            //       SizedBox(height: 5),
+            //
+            //       // Data & Validity (Middle Section)
+            //       Column(
+            //         crossAxisAlignment: CrossAxisAlignment.start,
+            //         children: [
+            //           Text("Validity | 180 Days",
+            //               style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500)),
+            //           Text("Unlock Access to: Posting | Renting | Buying",
+            //               style: TextStyle(fontSize: 14, color: Colors.black)),
+            //         ],
+            //       ),
+            //       Divider(color: Colors.blueGrey,),
+            //       Spacer(),
+            //
+            //       // Bottom Section (Horizontal Icons/Benefits)
+            //       Row(
+            //         mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            //         children: [
+            //           Icon(Icons.edit_note_outlined, color: Colors.blue.shade700, size: 22),
+            //           Icon(Icons.home_work_outlined, color: Colors.amber.shade700, size: 22),
+            //           Icon(Icons.real_estate_agent, color: Colors.teal.shade700, size: 22),
+            //           InkWell(
+            //             onTap: (){
+            //               Navigator.push(
+            //                   context,
+            //                   MaterialPageRoute(builder: (context) => SubscriptionPage()),
+            //               );
+            //             },
+            //             child: Text("Activate Subscription >", style: TextStyle(color: Colors.blue, fontSize: 16)),
+            //           ),
+            //         ],
+            //       ),
+            //     ],
+            //   ),
+            // ),
+            // const SizedBox(height: 15),
+            // Text("Annual Subscription", style: TextStyle(color: Colors.grey),),
+            // const SizedBox(height: 10),
+            // // Placeholder for Graphs/Analytics
+            // Container(
+            //   padding: EdgeInsets.all(12),
+            //   height: 150,
+            //   decoration: BoxDecoration(
+            //     color: Colors.white,
+            //     borderRadius: BorderRadius.circular(15),
+            //     border: Border.all(color: Colors.blue.shade300),
+            //     boxShadow: [
+            //       BoxShadow(color: Colors.green.shade100, blurRadius: 5, spreadRadius: 2)
+            //     ],
+            //   ),
+            //   child: Column(
+            //     crossAxisAlignment: CrossAxisAlignment.start,
+            //     children: [
+            //       // Plan Price (Top Section)
+            //       Text(
+            //         "₹ ${annualPrice ?? 'N/a'}",
+            //         style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.blue),
+            //       ),
+            //       SizedBox(height: 5),
+            //
+            //       // Data & Validity (Middle Section)
+            //       Column(
+            //         crossAxisAlignment: CrossAxisAlignment.start,
+            //         children: [
+            //           Text("Validity | 365 Days",
+            //               style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500)),
+            //           Text("Unlock Access to: Posting | Renting | Buying",
+            //               style: TextStyle(fontSize: 14, color: Colors.black)),
+            //         ],
+            //       ),
+            //       Divider(color: Colors.blueGrey,),
+            //       Spacer(),
+            //
+            //       // Bottom Section (Horizontal Icons/Benefits)
+            //       Row(
+            //         mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            //         children: [
+            //           Icon(Icons.edit_note_outlined, color: Colors.blue.shade700, size: 22),
+            //           Icon(Icons.home_work_outlined, color: Colors.amber.shade700, size: 22),
+            //           Icon(Icons.real_estate_agent, color: Colors.teal.shade700, size: 22),
+            //           InkWell(
+            //             onTap: (){
+            //               Navigator.push(
+            //                 context,
+            //                 MaterialPageRoute(builder: (context) => SubscriptionPage()),
+            //               );
+            //             },
+            //             child: Text("Activate Subscription >", style: TextStyle(color: Colors.blue, fontSize: 16)),
+            //           ),
+            //
+            //         ],
+            //       ),
+            //     ],
+            //   ),
+            // ),
 
           ],
         ),

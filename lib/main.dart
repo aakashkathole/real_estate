@@ -184,6 +184,21 @@ class HomeView extends StatelessWidget {
           );
         },
       ),
+      // post property floating button........................
+      floatingActionButton: FloatingActionButton.extended(
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => PropertyPostScreen(category: 'Default'),
+            ),
+          );
+        },
+        label: Text("", style: TextStyle(color: Colors.black, fontSize: 16),),
+        icon: Icon(Icons.add , color: Colors.white,),
+        backgroundColor: Colors.green, // use transparent if you want
+        elevation: 0,
+      ),
     );
   }
 
@@ -220,7 +235,7 @@ class GridViewScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // Sample data for grid items (could be property categories or anything else)
-    List<String> categories = ['Buy', 'Rent', 'Commercial', 'Land', 'Offices', 'Farm Land', 'PG','Post a Property'];
+    List<String> categories = ['Buy', 'Rent', 'Commercial', 'Land', 'Offices', 'Farm Land', 'PG']; // 'Post a Property'
 
     return Scaffold(
       backgroundColor: Colors.white,
@@ -301,58 +316,73 @@ class GridViewScreen extends StatelessWidget {
                   );
                 }
                 // push post a property screen on click
-                else if (categories[index] == 'Post a Property') {
-                  String userEmail = FirebaseAuth.instance.currentUser!.email!;
-
-                  checkSubscriptionStatus(userEmail).then((hasActiveSubscription){
-                    if (hasActiveSubscription) {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => PropertyPostScreen(category: categories[index]),
-                          ),
-                      );
-                    } else {
-                      showDialog(
-                        context: context,
-                        builder: (context) => AlertDialog(
-                          backgroundColor: Colors.white,
-                          title: Text("Subscription Required"),
-                          content: Text("Please purchase a subscription to post a property."),
-                          actions: [
-                            TextButton(
-                              onPressed: () => Navigator.push(
-                                  context,
-                              MaterialPageRoute(builder: (context) => UserPanelScreen())),
-                              style: ElevatedButton.styleFrom(
-                                side: BorderSide(color: Colors.blue, width: 2),
-                                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(100)),
-                                backgroundColor: Colors.white,
-                                foregroundColor: Colors.black,
-                              ),
-                              child: Text("Activate Subscription"),
-                            ),
-                            TextButton(
-                              onPressed: () => Navigator.pop(context),
-                                style: ElevatedButton.styleFrom(
-                                side: BorderSide(color: Colors.blue, width: 2),
-                                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(100)),
-                                backgroundColor: Colors.white,
-                                foregroundColor: Colors.black,
-                                ),
-                              child: Text("OK"),
-                            ),
-                          ],
-                        ),
-                      );
-                    }
-                  });
-                }
+                // else if (categories[index] == 'Post a Property') {
+                //   String userEmail = FirebaseAuth.instance.currentUser!.email!;
+                //
+                //   checkSubscriptionStatus(userEmail).then((hasActiveSubscription){
+                //     if (hasActiveSubscription) {
+                //       Navigator.push(
+                //           context,
+                //           MaterialPageRoute(
+                //               builder: (context) => PropertyPostScreen(category: categories[index]),
+                //           ),
+                //       );
+                //     } else {
+                //       showDialog(
+                //         context: context,
+                //         builder: (context) => AlertDialog(
+                //           backgroundColor: Colors.white,
+                //           title: Text("Subscription Required"),
+                //           content: Text("Please purchase a subscription to post a property."),
+                //           actions: [
+                //             TextButton(
+                //               onPressed: () => Navigator.push(
+                //                   context,
+                //               MaterialPageRoute(builder: (context) => UserPanelScreen())),
+                //               style: ElevatedButton.styleFrom(
+                //                 side: BorderSide(color: Colors.blue, width: 2),
+                //                 shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(100)),
+                //                 backgroundColor: Colors.white,
+                //                 foregroundColor: Colors.black,
+                //               ),
+                //               child: Text("Activate Subscription"),
+                //             ),
+                //             TextButton(
+                //               onPressed: () => Navigator.pop(context),
+                //                 style: ElevatedButton.styleFrom(
+                //                 side: BorderSide(color: Colors.blue, width: 2),
+                //                 shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(100)),
+                //                 backgroundColor: Colors.white,
+                //                 foregroundColor: Colors.black,
+                //                 ),
+                //               child: Text("OK"),
+                //             ),
+                //           ],
+                //         ),
+                //       );
+                //     }
+                //   });
+                // }
                 },
               child: CategoryCard(label: categories[index], color: Colors.white), // Only one return for CategoryCard
             );
           },
         ),
+      ),
+      // post property floating button........................
+      floatingActionButton: FloatingActionButton.extended(
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => PropertyPostScreen(category: 'Default'),
+            ),
+          );
+        },
+        label: Text("Post Property", style: TextStyle(color: Colors.white, fontSize: 16),),
+        icon: Icon(Icons.add , color: Colors.white,),
+        backgroundColor: Colors.green, // use transparent if you want
+        elevation: 0,
       ),
     );
   }
@@ -368,9 +398,9 @@ class CategoryCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      color: Colors.white,
+      color: Colors.white60,
       elevation: 4,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
       child: Center(
         child: Text(
           label,

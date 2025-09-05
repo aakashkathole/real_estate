@@ -8,6 +8,12 @@ class PropertyDetailsScreen extends StatelessWidget {
 
   PropertyDetailsScreen({required this.property});
 
+  String getDisplayValue(dynamic value) {
+    if (value == null) return '....';
+    final str = value.toString().trim();
+    return str.isEmpty ? '....' : str;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -56,10 +62,13 @@ class PropertyDetailsScreen extends StatelessWidget {
             _buildCard(
               title: "Property Details",
               children: [
-                _detailRow(Icons.currency_rupee_rounded, "Price", property['propertyPrice']),
-                //_detailRow(Icons.location_city, "District", property['district']),
-                //_detailRow(Icons.business, "Taluka", property['taluka']),
-                //_detailRow(Icons.location_on, "Specific Location", property['location']),
+                _detailRow(Icons.currency_rupee_rounded, "Price", getDisplayValue(property['propertyPrice'])),
+                _detailRow(Icons.location_city, "Area (in sq.ft.)", getDisplayValue(property['propertyArea'])),
+                _detailRow(Icons.business, "Floor Number", getDisplayValue(property['propertyFlorN'])),
+                _detailRow(Icons.location_on, "Furnishing Status", getDisplayValue(property['FurnishingStatus'])),
+                _detailRow(Icons.location_on, "Parking Availability", getDisplayValue(property['parkingAvailability'])),
+                _detailRow(Icons.location_on, "Water Supply", getDisplayValue(property['waterSupply'])),
+                _detailRow(Icons.location_on, "Available From", getDisplayValue(property['availableFrom'])),
               ],
             ),
 

@@ -97,6 +97,13 @@ class _PropertyPostScreenState extends State<PropertyPostScreen> {
   final TextEditingController contactController = TextEditingController();
   final TextEditingController locationController = TextEditingController();
   final TextEditingController priceController = TextEditingController();
+  final TextEditingController areaController = TextEditingController();
+  final TextEditingController furnishingController = TextEditingController();
+  final TextEditingController parkingController = TextEditingController();
+  final TextEditingController floorController = TextEditingController();
+  final TextEditingController waterController = TextEditingController();
+  final TextEditingController availableController = TextEditingController();
+
 
   @override
   void initState() {
@@ -157,7 +164,23 @@ class _PropertyPostScreenState extends State<PropertyPostScreen> {
             SizedBox(height: 10),
             _buildTextField("Location", locationController),
             SizedBox(height: 10),
-            _buildTextField("Price", priceController) ,
+
+            _buildSectionTitle("Common property details"),
+            _buildTextField("Price (INR)", priceController),
+            SizedBox(height: 10),
+            _buildTextField("Area (in sq.ft.)", areaController),
+            SizedBox(height: 10),
+            _buildTextField("Floor Number", floorController),
+            SizedBox(height: 10),
+            _buildTextField("Furnishing Status", furnishingController),
+            SizedBox(height: 10),
+            _buildTextField("Parking Availability", parkingController),
+            SizedBox(height: 10),
+            _buildTextField("Water Supply", waterController),
+            SizedBox(height: 10),
+            _buildTextField("Available From (Immediate / Date)	", availableController),
+            SizedBox(height: 10),
+
 
             _buildSectionTitle("Select State"),
             _buildDropdown("State", states, selectedState, (value) {
@@ -296,6 +319,12 @@ class _PropertyPostScreenState extends State<PropertyPostScreen> {
       "propertyKind": selectedPropertyKind,
       "propertyType": selectedPropertyType,
       "propertyPrice": priceController.text,
+      "propertyArea": areaController.text,
+      "propertyFlorN": floorController.text,
+      "FurnishingStatus": furnishingController.text,
+      "parkingAvailability": parkingController.text,
+      "waterSupply": waterController.text,
+      "availableFrom": availableController.text,
       "timestamp": FieldValue.serverTimestamp(),
     });
 
@@ -308,6 +337,12 @@ class _PropertyPostScreenState extends State<PropertyPostScreen> {
     contactController.clear();
     locationController.clear();
     priceController.clear();
+    areaController.clear();
+    floorController.clear();
+    furnishingController.clear();
+    parkingController.clear();
+    waterController.clear();
+    availableController.clear();
     setState(() {
       selectedState = null;
       selectedDistrict = null;
